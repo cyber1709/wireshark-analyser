@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container mt-5">
+        <table class="table table-bordered">
+            <tbody>
+                <tr>
+                    <th scope="row">Computer Username</th>
+                    <td>{{ computer_details.computer_username }}</td>
+                </tr>
+
+                <tr>
+                    <th scope="row">System Administrator</th>
+                    <td>{{ computer_details.added_by }}</td>
+                </tr>
+
+                <tr>
+                    <th scope="row">Computer Type</th>
+                    <td>{{ computer_details.computer_type }}</td>
+                </tr>
+                <!-- Add more rows as needed -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Results</h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th class="m-0 font-weight-bold text-primary">Path for malicious file</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        {% for path in detected_paths %}
+                            <tr>
+                                <th>{{ path }}</th>
+                            </tr>
+                        {% endfor %}
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Source IP address -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Malicious IPs Source Address</h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th class="m-0 font-weight-bold text-primary">IP address</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        {% for ip in detected_mal_local_address %}
+                            <tr>
+                                <th>{{ ip }}</th>
+                            </tr>
+                        {% endfor %}
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Source IP address -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Malicious IPs Foreign Address</h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th class="m-0 font-weight-bold text-primary">IP address</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        {% for ip in detected_mal_foreign_address %}
+                            <tr>
+                                <th>{{ ip }}</th>
+                            </tr>
+                        {% endfor %}
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

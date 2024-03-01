@@ -1,0 +1,167 @@
+{% extends 'dataProcessor/base.html' %}
+{% load static %}
+{% block title %} <title>RAT | SOP</title> {% endblock %}
+
+{% block content %}
+<!-- Begin Page Content -->
+                <div class="container-fluid">
+
+                    <!-- Page Heading -->
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h3 mb-0 text-gray-800">Standard Operating Procedure (SOP): Running the Platform</h1>
+                    </div>
+
+                    <h3>Objective:</h3>
+                        <p>The platform is designed to ensure the robust security of the organisation's network by actively
+                            maintaining updated threat intel, leveraging indicators of compromise keyword
+                            matching for enhanced threat detection, and employing mechanisms
+                            for the identification of malicious communication.
+                            Additionally, users can seamlessly download comprehensive reports in the form of
+                            facilitating informed decision-making and proactive cybersecurity measures</p>
+
+                        <h3>Preconditions:</h3>
+                        <ol>
+                            <li>Ensure that you have the necessary credentials to access the platform.</li>
+                            <li>The users are generated for System Network Administrators (SANA) of every group.</li>
+                        </ol>
+
+
+
+                        <h3>Procedure:</h3>
+
+                        <ol>
+                            <li>
+                                <h4>Login to the Platform:</h4>
+                                <ul>
+                                    <li>Open a web browser.</li>
+                                    <li>Navigate to the platform's login page.</li>
+                                    <li>Enter your credentials (username and password).</li>
+                                    <li>Click on the "Login" button.</li>
+                                    <li> Upon successful login user will be redirected to Dashboard</li>
+                                </ul>
+                            </li>
+                            <br>
+                            <img src="{% static 'dataProcessor/img/login-sop.png' %}" style="width: 90%; height: auto;" class="img-fluid" alt="Responsive Image">
+
+
+                            <!-- Repeat similar structure for other steps -->
+
+                        </ol>
+
+
+                    <ol>
+                            <!-- Assets Section -->
+                            <li>
+                                <h4>Dashboard:</h4>
+                                <ul>
+                                    <li>a) My Devices - All computers which are added</li>
+                                    <ol>
+                                        <li>Navigate to the "My Devices" section in the dashboard.</li>
+                                        <li>View a list of all computers that have been added to your account.</li>
+                                    </ol>
+                                    <li>b) Add Device - To add computer details</li>
+                                    <ol>
+                                        <li>Click on the "Add Device" option in the dashboard.</li>
+                                        <li>Follow the steps to provide details and upload necessary files to add a new computer.</li>
+                                        <li>Wait for the confirmation message indicating successful addition.</li>
+                                    </ol>
+
+                                    <li>c) Reports Section- Download reports for system</li>
+                                    <li>d) Platform SOP - Instructions to use the platform</li>
+                                    <li>e) Script SOP- Instructions to run the script</li>
+                                    <li>f) Download the executable script to run on the system to be inspected</li>
+
+                                </ul>
+                            </li>
+                            <br>
+
+
+                            <!-- Platform SOP Section -->
+                            <li>
+                                <h4>Platform SOP Section:</h4>
+                                <ul>
+                                    <li>a) Download the audit script</li>
+                                    <ol>
+                                        <li>Visit the "Download Audit Script" page in the "Platform SOP" section.</li>
+                                        <li>Find the appropriate download link for the audit script.</li>
+                                        <li>Click on the link to download the script.</li>
+                                    </ol>
+                                    <li>b) SOP Document for using the platform</li>
+                                    <ol>
+                                        <li>Visit the "SOP Document" page in the "Platform SOP" section.</li>
+                                        <li>Access and read the SOP document for guidelines on using the platform.</li>
+                                    </ol>
+                                </ul>
+                            </li>
+                            <br>
+
+
+
+                            <!-- Additional Tips Section -->
+                            <li>
+                                <h4>Additional Tips:</h4>
+                                <ul>
+                                    <li>Ensure the application has a user-friendly interface for easy navigation.</li>
+                                    <li>Regularly check for updates in the "Platform SOP" section for any changes or additions to procedures.</li>
+                                    <li>Contact support if you encounter any issues or need further assistance.</li>
+                                </ul>
+                            </li>
+
+                            <!-- ... Repeat similar structure for other steps ... -->
+
+                        </ol>
+
+                        <h2>2. Add Computers:</h2>
+                        <ol>
+                            <li>Navigate to the "Add Computers" section in the dashboard.</li>
+                            <li>Click on the "Upload Zip File" button.</li>
+                            <li>Select the zip file containing computer information for upload.</li>
+                            <li>Choose the computer type from the available options (UCS, Internet, Standalone, Server).</li>
+                            <li>Click on the "Submit" or "Upload" button to add the computers.</li>
+                            <li>Wait for the confirmation message indicating successful upload.</li>
+                        </ol>
+
+                        <h2>3. View Inventory:</h2>
+                        <ol>
+                            <li>Navigate to the "Inventory" section on the dashboard.</li>
+                            <li>A list of all added computers will be displayed, including their types and other relevant details.</li>
+                            <li>Use filters or search options to locate specific computers if necessary.</li>
+                        </ol>
+
+                        <h2>4. View Computer Details:</h2>
+                        <ol>
+                            <li>From the "Inventory" section, click on the computer's name or ID to view details.</li>
+                            <li>The details page should include information such as computer specifications, status, and any other relevant data.</li>
+                        </ol>
+
+                        <h2>5. Generate and Download Reports:</h2>
+                        <ol>
+                            <li>Navigate to the "Reports" section on the dashboard.</li>
+                            <li>Select the type of report you want to generate (e.g., Inventory Report, Computer Details Report).</li>
+                            <li>Configure any specific parameters or filters for the report.</li>
+                            <li>Click on the "Generate Report" button.</li>
+                            <li>Once the report is generated, there should be an option to download it as a PDF document.</li>
+                        </ol>
+
+
+                                    <h3>Troubleshooting:</h3>
+                                    <p>If you encounter any issues or errors during the process, refer to the platform's help documentation or contact the support team for assistance.</p>
+
+                                    <h3>Note:</h3>
+                                    <ul>
+                                        <li>Ensure that you comply with data privacy and security protocols when handling computer details and reports.</li>
+                                        <li>Regularly update your password and follow security best practices.</li>
+                                    </ul>
+
+
+
+                        </div>
+                    </div>
+
+                </div>
+                <!-- /.container-fluid -->
+
+            </div>
+            <!-- End of Main Content -->
+
+{% endblock %}

@@ -1,0 +1,56 @@
+{% extends 'dataProcessor/base.html' %}
+{% block title %} <title> RAT | Add computer</title> {% endblock %}
+
+{% block content %}
+
+ <!-- Begin Page Content -->
+                <div class="container-fluid">
+
+                    <!-- Page Heading -->
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h3 mb-0 text-gray-800">Add device</h1>
+                    </div>
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h5 class="h5 mb-0 text-gray-800">Computer username should be same as zip filename without extension.</h5>
+                    </div>
+
+                   <div class="container mt-5">
+                        <form method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+
+                            <div class="form-group">
+                                <label for="id_computer_username">Computer username:</label>
+                                <input type="text" class="form-control" name="computer_username" id="id_computer_username" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="id_computer_type">Computer type:</label>
+                                <select class="form-control" name="computer_type" id="id_computer_type" required>
+                                    <option value="" disabled selected>Select a computer type</option>
+                                    <option value="UCS">UCS</option>
+                                    <option value="standalone">Standalone</option>
+                                    <option value="server">Server</option>
+                                    <option value="internet">Internet</option>
+                                    <!-- Add more options as needed -->
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="id_file">File:</label>
+                                <input type="file" class="form-control-file" name="file" id="id_file" required>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+                    </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- /.container-fluid -->
+
+            </div>
+            <!-- End of Main Content -->
+
+
+{% endblock %}

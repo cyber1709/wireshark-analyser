@@ -1,0 +1,129 @@
+{% extends 'dataProcessor/base.html' %}
+{% block title %}<title>RAT | Details</title> {% endblock %}
+{% block content %}
+
+
+
+ <div class="container-fluid">
+
+    <div id="accordion">
+        <!-- Accordion Item 1 -->
+        <div class="card">
+            <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        SUSPICIOUS FILE DETAILS
+                    </button>
+                </h5>
+            </div>
+
+            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                <div class="card-body">
+                    <table class="table table-sm mt-2">
+                        <thead>
+                            <tr>
+                                <th scope="col">Path of suspicious file</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        {% for row in suspicious_file_rows %}
+                            <tr>
+                                <th scope="row">{{ row.filename_path }}</th>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Accordion Item 2 -->
+        <div class="card">
+            <div class="card-header" id="heading2">
+                <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                        NETSTAT CONNECTIONS DETAILS - NETSTAT
+                    </button>
+                </h5>
+            </div>
+
+            <div id="collapse2" class="collapse" aria-labelledby="heading2" data-parent="#accordion">
+                <div class="card-body">
+                    <table class="table table-sm mt-2">
+                        <thead>
+                            <tr>
+                                <th scope="col">Protocol</th>
+                                <th scope="col">Source Address</th>
+                                <th scope="col">Source Port</th>
+                                <th scope="col">Destination Address</th>
+                                <th scope="col">Destination Port</th>
+                                <th scope="col">State</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        {% for row in netstat_file_rows %}
+                            <tr>
+                                <th scope="row">{{ row.proto }}</th>
+                                <td>{{ row.local_address }}</td>
+                                <td>{{ row.src_port }}</td>
+                                <td>{{ row.foreign_address }}</td>
+                                <td>{{ row.dst_port }}</td>
+                                <td>{{ row.state }}</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Accordion Item 3 -->
+        <div class="card">
+            <div class="card-header" id="headingThree">
+                <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        TASKLIST- RUNNING TASKS DETAILS
+                    </button>
+                </h5>
+            </div>
+
+            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                <div class="card-body">
+                   <table class="table table-sm mt-2">
+                        <thead>
+                            <tr>
+                                <th scope="col">Process Name</th>
+                                <th scope="col">PID</th>
+                                <th scope="col">Services</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        {% for row in tasklist_file_rows %}
+                            <tr>
+                                <th scope="row">{{ row.image_name }}</th>
+                                <th scope="row">{{ row.pid }}</th>
+                                <th scope="row">{{ row.services }}</th>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Add more accordion items as needed -->
+    </div>
+
+
+ </div>
+<!-- /.container-fluid -->
+
+</div>
+<!-- End of Main Content -->
+
+
+
+{% endblock %}

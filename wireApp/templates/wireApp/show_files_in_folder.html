@@ -1,0 +1,55 @@
+{% extends 'dataProcessor/base.html' %}
+{% block title %} <title>{{ folder_name }}</title>{% endblock %}
+
+{% block content %}
+ <!-- Begin Page Content -->
+                <div class="container-fluid">
+
+                    <!-- Page Heading -->
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h3 mb-0 text-gray-800">Files in Folder: {{ folder_name }}</h1>
+                    </div>
+
+                    <!-- Content Row -->
+                    <div class="row">
+
+                    {% if files %}
+
+                     {% for file in files %}
+                        <!-- Adding systems based on username -->
+
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-primary shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                                <!-- custom text here --></div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                                <a href="{% url 'dataProcessor:download_file' folder_name=folder_name file_name=file %}" target="_blank">{{ file }}</a>
+                                            </div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <a href="{% url 'dataProcessor:download_file' folder_name=folder_name file_name=file %}" target="_blank"><i class="fas fa-download"></i></a>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                            {% endfor %}
+                        {% endif %}
+                    </div> <!-- row ends -->
+
+                        </div>
+                    </div>
+
+                </div>
+                <!-- /.container-fluid -->
+
+            </div>
+            <!-- End of Main Content -->
+
+{% endblock %}

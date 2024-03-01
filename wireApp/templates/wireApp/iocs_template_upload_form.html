@@ -1,0 +1,19 @@
+<!-- your_app/templates/upload_file.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Upload</title>
+</head>
+<body>
+    <h2>Upload File</h2>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="file">Choose a file:</label>
+        <input type="file" name="file" id="file" > <!-- Specify allowed file types in 'accept' attribute -->
+        <button type="submit">Upload</button>
+    </form>
+</body>
+</html>

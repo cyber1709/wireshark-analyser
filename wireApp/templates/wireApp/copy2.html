@@ -1,0 +1,95 @@
+    <!-- Page Heading -->
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h3 mb-0 text-gray-800">Report for system <b>{{ folder_name }}</b></h1>
+                        <a href="{% url 'dataProcessor:generate-report' folder_name=folder_name %}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                                class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+                    </div>
+
+                    <!-- DataTales Example -->
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">Results</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th class="m-0 font-weight-bold text-primary">Path for malicious file</th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+
+                                        {% for path in detected_paths %}
+
+                                            <tr>
+                                                <th>{{ path }} </th>
+                                            </tr>
+                                        {% endfor %}
+
+                                    </tfoot>
+                                </table>
+                            </div>
+                        </div>
+
+
+                        <!-- Source IP address -->
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">Malicious IPs Source Address</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th class="m-0 font-weight-bold text-primary">IP address</th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+
+                                        {% for ip in detected_mal_local_address %}
+
+                                            <tr>
+                                                <th>{{ ip }} </th>
+                                            </tr>
+                                        {% endfor %}
+
+                                    </tfoot>
+                                </table>
+                            </div>
+                        </div>
+
+
+                            <!-- Source IP address -->
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">Malicious IPs Foreign Address</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th class="m-0 font-weight-bold text-primary">IP address</th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+
+                                        {% for ip in detected_mal_foreign_address %}
+
+                                            <tr>
+                                                <th>{{ ip }} </th>
+                                            </tr>
+                                        {% endfor %}
+
+                                    </tfoot>
+                                </table>
+                            </div>
+                        </div>
+
+
+
+
+
+                    </div>
